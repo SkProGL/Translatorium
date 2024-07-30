@@ -11,10 +11,12 @@ const DEFAULT_SETTINGS = {
     'translated': 'Votre historique de traduction'
 }];
 var temporary = [];
-chrome.runtime.onInstalled.addListener(() => {
-    chrome.storage.sync.get(['key'], (result) => { if (!result.key) { chrome.storage.sync.set({ key: DEFAULT_SETTINGS }); } });
-    chrome.storage.sync.get(['favoriteKey'], (result) => { if (!result.favoriteKey) { chrome.storage.sync.set({ favoriteKey: FAVORITE }); } });
-    chrome.tabs.create({ url: chrome.runtime.getURL("main_page/main.html") });
+chrome.runtime.onInstalled.addListener((details) => {
+    if (details.reason === "install" || details.reason === "update") {
+        chrome.storage.sync.get(['key'], (result) => { if (!result.key) { chrome.storage.sync.set({ key: DEFAULT_SETTINGS }); } });
+        chrome.storage.sync.get(['favoriteKey'], (result) => { if (!result.favoriteKey) { chrome.storage.sync.set({ favoriteKey: FAVORITE }); } });
+        chrome.tabs.create({ url: chrome.runtime.getURL("main_page/main.html") });
+    }
 });
 
 chrome.runtime.onMessage.addListener(function (message) {
