@@ -1,0 +1,224 @@
+* {
+    color: white;
+    /* font-family: ubuntu; */
+    font-family: Inter, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    outline: none;
+}
+
+body {
+    background: hsla(233, 12%, 13%, 1);
+    margin: auto;
+    display: block;
+    overflow: auto;
+}
+
+#example-setting {
+    position: relative;
+    top: 3%;
+    left: 0;
+}
+
+
+#example {
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    /* background: #000000cc; */
+    background: hsl(0deg 0% 7%);
+    display: none;
+    position: fixed;
+    margin: auto;
+    left: 0;
+    top: 0;
+    text-align: center;
+}
+
+#example_availability {
+    font-size: 16px;
+    line-height: 8px;
+    font-size: 14px;
+}
+
+.register {
+    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 0.4em;
+    background: none;
+    border: 1px solid white;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.register-label {
+    font-size: 18px;
+    margin: 14px;
+    color: #ffffff99;
+}
+
+#mainDiv {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+button, input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 0.4em;
+    background: none;
+    border: 1px solid white;
+}
+.reset {
+    padding: 10px;
+    font-size: 16px;
+    background: none;
+    border: none;
+    color: #989898;
+    cursor: pointer;
+}
+#login {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    padding: 7px;
+    font-size: 16px;
+}
+
+img[alt="Microsoft API"] {
+    padding: 0 10px 0 0;
+}
+
+input {
+    padding: 10px;
+    border: 1px dashed;
+    width: 500px;
+}
+
+input, input::placeholder {
+    color: #5b5b5b;
+}
+
+input[err="1"] {
+    background: rgb(144, 57, 57);
+    color: black;
+}
+
+
+
+#additional {
+    width: fit-content;
+    font-size: 20px;
+    padding: 0 5px 5px 5px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.shortcuts {
+    display: block;
+    text-align: center;
+}
+
+.key-usage,
+.key-shortcut {
+    width: fit-content;
+    display: block;
+    font-size: 14px;
+    padding: 5px 0 5px 0;
+}
+
+.key-shortcut {
+    color: wheat;
+}
+
+.key-usage {
+    color: #deae52;
+}
+
+.area-break {
+    display: inline-flex;
+    align-items: center;
+    width: -webkit-fill-available;
+    margin-top: 10px;
+}
+
+.line {
+    flex: 1;
+    border-bottom: 1px dashed white;
+}
+
+
+
+.register:focus, .register:active, .register:hover, input:hover,
+#reset-preferences:focus, #reset-preferences:active, #reset-preferences:hover,
+#reset-favorites:focus, #reset-favorites:active, #reset-favorites:hover {
+    background: white;
+    color: black;
+}
+
+#buy-coffee {
+    margin-top: 15px;
+}
+
+#credits {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    color: #ffffff29;
+}
+
+#example::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 10px;
+}
+
+#example::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    width: 4px;
+}
+
+
+.radio {
+    display: inline-flex;
+    width: max-content;
+    height: max-content;
+    max-height: inherit;
+    background: #1e1e1e;
+    border-radius: 8px;
+    border: 1px solid white;
+    color: #ffffff94;
+    text-align: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.radio_input:checked+.radio_label {
+    background: rgb(60 59 61);
+    color: #d1d1d1;
+}
+
+.radio_input {
+    display: none;
+}
+
+.radio_label {
+    display: flex;
+    align-items: center;
+    color: var(--font-select-color);
+    padding: 8px 18px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.6s;
+}
+
+.radio_label:focus,
+.radio_input:hover+.radio_label {
+    height: 100%;
+    background: rgb(46 45 47);
+    transition: 0.4s;
+    color: #bf9815;
+    cursor: pointer;
+}

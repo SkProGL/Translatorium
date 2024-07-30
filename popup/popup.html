@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='../fonts/ubuntu.css' rel='stylesheet'>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="toolbar">
+        <div class="radio">
+            <input class="radio_input" value="google" type="radio" id="googleOpt" name="bubbleOptions">
+            <label class="radio_label" tabindex="0" for="googleOpt" hover-title="Google popup">&#8766;</label>
+            <input class="radio_input" value="window" type="radio" id="zeroOpt" name="bubbleOptions">
+            <label class="radio_label" tabindex="0" for="zeroOpt" hover-title="Window tooltip">&#10070;</label>
+            <input class="radio_input" value="cloud" type="radio" id="firstOpt" name="bubbleOptions">
+            <label class="radio_label" tabindex="0" for="firstOpt" hover-title="Bubble tooltip">&#9729;</label>
+            <input class="radio_input" value="selection" type="radio" id="secondOpt" name="bubbleOptions">
+            <label class="radio_label" tabindex="0" for="secondOpt" hover-title="Selection tooltip">&#9776;</label>
+            <input class="radio_input" value="off" type="radio" id="thirdOpt" name="bubbleOptions">
+            <label class="radio_label" tabindex="0" for="thirdOpt" hover-title="Turn off tooltip/popup">&#10006;</label>
+        </div>
+        <button id="extension-download" hover-title="Download favorites">&#8686;</button>
+        <button id="extension-playground" hover-title="Fullscreen version">&#10002;</button>
+        <button id="extension-home" hover-title="Main menu">&#9881;</button>
+    </div>
+
+    <div id="main-area">
+        <div id="translate-select">
+            <select id="source-lang" hover-title="Source language [alt+1]">
+                <option value='auto'>Auto</option>
+            </select>
+            <button id="reverse-lang" hover-title="Swap languages [ctrl+q]">&#10608</button>
+            <select id="target-lang" hover-title="Target language [alt+2]"></select>
+        </div>
+        <div id="translate-area">
+            <textarea id="input-translate" placeholder="Translate..." contenteditable="true"></textarea>
+            <div id="output-translate"></div>
+        </div>
+        <div id="translate-tools">
+            <div id="translate-tools-1">
+                <button id="in-speak" hover-title="Listen">&#8883;</button>
+                <button id="in-clipboard" hover-title="Copy">&#10064;</button>
+                <button id="favorite" hover-title="Add to favorites [ctrl+alt+f]">&#10022;</button>
+                <div id="in-word-count"></div>
+                <button id="in-scale-decrease" hover-title="Decrease font">&#8722;</button>
+                <button id="in-scale-increase" hover-title="Increase font">&#43;</button>
+            </div>
+            <div id="translate-tools-2">
+                <button id="out-speak" hover-title="Listen">&#8883;</button>
+                <button id="out-clipboard" hover-title="Copy [ctrl+.]">&#10064;</button>
+            </div>
+        </div>
+    </div>
+    <div id="dictionary-area"></div>
+    <p></p>
+    <div id="favorites-area"></div>
+    <p></p>
+    <p></p>
+    <div class="bubble">Tooltip</div>
+    <link rel='stylesheet' href='popup.css'>
+    <script type='text/javascript' src='../languages.js'></script>
+    <script type='text/javascript' src='popup.js'></script>
+    <script type='text/javascript' src='events.js'></script>
+</body>
+
+</html>

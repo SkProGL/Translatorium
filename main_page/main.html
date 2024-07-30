@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translator.</title>
+    <link href='../fonts/ubuntu.css' rel='stylesheet'>
+    <link rel='stylesheet' href='main.css'>
+</head>
+
+<body>
+    <div id="example">
+        <div id="example-setting">
+            <img src="../examples/ex0.png" id="example_image" width="720" height="405" alt="example">
+            <!-- <div style="font-size: 16px; color: #989898;">Choose Translation Style</div> -->
+            <p></p>
+            <div class="radio">
+                <input class="radio_input" value="google" type="radio" id="googleOpt" name="bubbleOptions">
+                <label class="radio_label" tabindex="0" for="googleOpt" title="Google popup">&#8766;</label>
+                <input class="radio_input" value="window" type="radio" id="zeroOpt" name="bubbleOptions">
+                <label class="radio_label" tabindex="0" for="zeroOpt" title="Window tooltip">&#10070;</label>
+                <input class="radio_input" value="cloud" type="radio" id="firstOpt" name="bubbleOptions">
+                <label class="radio_label" tabindex="0" for="firstOpt" title="Bubble tooltip">&#9729;</label>
+                <input class="radio_input" value="selection" type="radio" id="secondOpt" name="bubbleOptions">
+                <label class="radio_label" tabindex="0" for="secondOpt" title="Selection tooltip">&#9776;</label>
+                <input class="radio_input" value="off" type="radio" id="thirdOpt" name="bubbleOptions">
+                <label class="radio_label" tabindex="0" for="thirdOpt" title="Turn off tooltip/popup">&#10006;</label>
+            </div>
+            <p></p>
+            <div id="example_description" style="font-size: 16px;"></div>
+            <p></p>
+            <div id="example_availability"></div>
+            <p></p>
+            <p></p>
+            <button class="register" id="example_close">Close</button>
+        </div>
+    </div>
+    
+
+    <div id="mainDiv">
+        <div style="display: inline-flex;">
+            <button class="register" id="guide">Feature overview</button>
+            <button class="register" id="help">Extension doesn't work?</button>
+        </div>
+        <div class="area-break">
+            <div class="line"></div>
+            <label id="additional">Microsoft API Account</label>
+            <div class="line"></div>
+        </div>
+        <button class="register" id="login">
+            <img src="../icons/microsoft-azure.png" height="40" alt="Microsoft API" />
+            Register for API (payment-free)
+        </button>
+        <label class="register-label">then</label>
+        <button class="register" id="retrieve">Get API key (automated)</button>
+        <label class="register-label">or</label>
+        <input id="api-key" err="0" placeholder="Enter API key"></input>
+        <p></p>
+        <div class="area-break">
+            <div class="line"></div>
+            <label id="additional">Keyboard Shortcuts</label>
+            <div class="line"></div>
+        </div>
+        <div class="shortcuts">
+            <div class="key-usage">In-action (select text)</div>
+            <label class="key-shortcut">[ctrl + .] copy translation</label>
+            <div class="key-usage"> Advanced Menu</div>
+            <label class="key-shortcut">[alt + u] open advanced menu</label>
+            <label class="key-shortcut">[ctrl + q] swap languages</label>
+            <label class="key-shortcut">[alt + 1] choose input language</label>
+            <label class="key-shortcut">[alt + 2] choose output language</label>
+            <label class="key-shortcut">[alt + i] focus input field</label>
+            <label class="key-shortcut">[ctrl + .] copy translation</label>
+            <label class="key-shortcut">[ctrl + alt + f] add to favorites</label>
+            <label class="key-shortcut">[ctrl + scroll] change font size</label>
+            <label class="key-shortcut">[ctrl + enter] open in Google Translator</label>
+        </div>
+        <p></p>
+        <div class="area-break">
+            <div class="line"></div>
+            <label id="additional">Additional</label>
+            <div class="line"></div>
+        </div>
+        <button class="reset" id="reset-preferences">Reset preferences</button>
+        <button class="reset" id="reset-favorites">Reset favorites</button>
+        <a href="https://www.buymeacoffee.com/allegedlyrigid" id="buy-coffee">
+            <img src="../icons/bmc.png" height="31" alt="Support" />
+        </a>
+        <p></p>
+    </div>
+    <div id="credits">Made by SkPro</div>
+    <script type='text/javascript' src='main.js'></script>
+
+</body>
+
+</html>

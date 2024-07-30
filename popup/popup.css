@@ -1,0 +1,394 @@
+:root {
+    --bg-main-color: hsl(0deg 0% 7%);
+    --bg-hover-color: rgb(46 45 47);
+    --bg-color: #252427;
+    --output-bg-color: #39393d;
+    --font-color: white;
+    --font-select-color: #ffffff94;
+    --hover-color: #bf9815;
+    --border-radius: 0.7em;
+    --font-ubuntu: 'Ubuntu';
+}
+
+* {
+    outline: none;
+}
+
+body {
+    background: var(--bg-main-color);
+    min-width: 180px;
+    min-height: 200px;
+    width: 450px;
+    height: 220px;
+    max-width: 470px;
+    max-height: 270px;
+    overflow-y: auto;
+}
+
+#main-area {
+    /* box-shadow: 2px 2px 13px #00000061; */
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 2px 2px 6px #00000066;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#translate-select {
+    display: inline-block;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 34px;
+    border-bottom: none;
+}
+
+select {
+    -webkit-appearance: none;
+    width: -webkit-fill-available;
+    margin: 5px 0 5px 0;
+    padding: 8px 5px 8px 5px;
+    font-size: 15px;
+    /* border: 1px solid var(--font-color); */
+    border: none;
+    font-family: var(--font-ubuntu);
+
+}
+
+#reverse-lang {
+    background: none;
+    border: none;
+    margin: 5px 0 5px 0;
+    padding: 6px 10px 6px 10px;
+    font-size: 18px;
+}
+
+#target-lang {
+    text-align: right;
+}
+
+#translate-area {
+    display: flex;
+    position: relative;
+    min-height: 90px;
+    max-height: 300px;
+    border-top: 1px solid var(--output-bg-color);
+    /* border: 1px solid #ffffff52; */
+}
+
+#input-translate, #output-translate {
+    font-family: var(--font-ubuntu);
+    width: 50%;
+    border: none;
+    font-size: 16px;
+    padding-left: 4px;
+    padding-right: 4px;
+    overflow-wrap: break-word;
+}
+
+#input-translate {
+    color: var(--font-color);
+    resize: none;
+}
+
+#output-translate {
+    overflow-y: auto;
+    background: var(--output-bg-color);
+    color: var(--font-color);
+}
+
+#input-translate::selection, #output-translate::selection {
+    background-color: var(--output-bg-color);
+    color: #ebb85d;
+}
+
+body::-webkit-scrollbar-thumb,
+select::-webkit-scrollbar-thumb,
+#input-translate::-webkit-scrollbar-thumb,
+#output-translate::-webkit-scrollbar-thumb {
+    background: var(--font-color);
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar,
+select::-webkit-scrollbar,
+#input-translate::-webkit-scrollbar,
+#output-translate::-webkit-scrollbar {
+    width: 5px;
+}
+
+#output-translate:empty:before {
+    content: attr(data-placeholder);
+    color: grey;
+}
+
+#translate-tools {
+    display: flex;
+    font-family: var(--font-ubuntu);
+    border-top: 1px solid var(--output-bg-color);
+    max-height: 32px;
+}
+
+#translate-tools div {
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+#translate-select, select, #input-translate, #translate-tools div {
+    background: var(--bg-color);
+}
+
+#translate-tools-1 {
+    justify-content: left;
+}
+
+#translate-tools-2 {
+    justify-content: right;
+    border-left: 1px solid var(--output-bg-color);
+}
+
+#in-word-count, #translate-tools button {
+    background: none;
+    border: none;
+    color: var(--font-select-color);
+    height: max-content;
+}
+
+#translate-tools button {
+    font-size: 18px;
+}
+
+#in-word-count {
+    font-size: 12px;
+}
+
+
+select, #reverse-lang, #translate-tools, select option {
+    color: var(--font-select-color);
+    background: none;
+}
+
+
+.radio_label:focus,
+.radio_input:hover+.radio_label,
+select:focus, select:hover,
+#reverse-lang:focus, #reverse-lang:hover,
+#translate-tools button:focus, #translate-tools button:hover,
+#extension-home:focus, #extension-home:hover,
+#extension-download:focus, #extension-download:hover,
+#extension-playground:focus, #extension-playground:hover,
+.favorites-row .original:focus, .favorites-row .original:hover,
+.favorites-row .translated:focus, .favorites-row .translated:hover {
+    /* font-style: italic; */
+    height: 100%;
+    background: var(--bg-hover-color);
+    transition: 0.4s;
+    color: var(--hover-color);
+    cursor: pointer;
+}
+
+#dictionary-area {
+    color: white;
+    margin: 10px 5px 0 5px;
+    display: none;
+    /* background: var(--output-bg-color); */
+    background: linear-gradient(360deg, var(--bg-color), var(--output-bg-color));
+    box-shadow: 2px 2px 6px #00000066;
+    border-radius: var(--border-radius);
+    padding: 5px;
+}
+
+
+.dictionary-row {
+    display: flex;
+    max-height: fit-content;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-family: var(--font-ubuntu);
+    overflow: hidden;
+    overflow-wrap: break-word;
+}
+
+.dictionary-row .title {
+    float: left;
+    width: 20%;
+    margin: 0 0 0 5px;
+    /* background: grey; */
+    justify-content: left;
+    vertical-align: middle;
+    align-items: left;
+    align-content: left;
+    text-align: left;
+}
+
+.dictionary-row .description {
+    float: right;
+    width: 80%;
+    justify-content: left;
+    vertical-align: top;
+    text-align: left;
+}
+
+.dictionary-row .text-content:hover,
+.dictionary-row .text-content:focus {
+    color: var(--hover-color);
+    background: var(--output-bg-color);
+    border-radius: 0.2em;
+}
+
+
+.bubble {
+    background: var(--bg-hover-color);
+    color: var(--hover-color);
+    display: flex;
+    visibility: hidden;
+    pointer-events: none;
+    cursor: pointer;
+    white-space: nowrap;
+    width: fit-content;
+    height: fit-content;
+    position: fixed;
+    font-family: var(--font-ubuntu);
+    border: 1px solid;
+    padding: 3px 6px 3px 6px;
+    border-radius: 0.2em;
+    font-size: 12px;
+    /* transition: 2s cubic-bezier(0.175, 0.885, 0.32, 1.275); */
+}
+
+.radio {
+    display: inline-flex;
+    width: max-content;
+    height: max-content;
+    max-height: inherit;
+    background: #1e1e1e;
+    /* max-height: 30px; */
+    text-align: center;
+    align-items: center;
+    /* border-right: 2px solid #bf9815; */
+    overflow: hidden;
+}
+
+.radio_input:checked+.radio_label {
+    background: rgb(60 59 61);
+    color: #d1d1d1;
+}
+
+.radio_input {
+    display: none;
+}
+
+.radio_label {
+    display: flex;
+    align-items: center;
+    color: var(--font-select-color);
+    padding: 8px 18px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.6s;
+}
+
+#toolbar {
+    background: var(--bg-color);
+    display: inline-flex;
+    border: none;
+    border-radius: 0.7em;
+    max-height: 30px;
+    margin: 0 0 5px 5px;
+    text-align: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#settings-area {
+    margin-left: 5px;
+    background: var(--bg-color);
+    color: var(--font-select-color);
+    border: none;
+    max-height: 30px;
+    border-radius: 0.7em;
+    overflow: hidden;
+}
+
+#extension-download,
+#extension-playground,
+#extension-home {
+    padding: 8px 18px;
+    font-size: 18px;
+    background: none;
+    width: max-content;
+    height: max-content;
+    text-align: center;
+    align-items: center;
+    border: none;
+    color: var(--font-select-color);
+}
+
+#favorites-area {
+    /* background: #161616; */
+    background: linear-gradient(75deg, #1d1d1d 0%, rgb(8 8 8 / 31%) 100%);
+    box-shadow: 2px 2px 6px #00000066;
+    margin: 10px 5px 0 5px;
+    padding: 5px;
+    border-radius: var(--border-radius);
+    outline: none;
+}
+
+.favorites-row {
+    display: flex;
+    /* background: #252525; */
+    border-radius: var(--border-radius);
+    max-height: 25px;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-ubuntu);
+    font-size: 14px;
+    overflow: hidden;
+    color: white;
+
+}
+
+.favorites-row:not(nth-last-child(1)) {
+    margin: 5px 0 0 0;
+}
+
+
+.favorites-row .original, .favorites-row .translated {
+    width: 45%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-height: max-content;
+    padding: 10px 5px;
+
+}
+
+.favorites-row .original {
+    white-space: nowrap;
+}
+
+.favorites-row .star {
+    width: 10%;
+    background: none;
+    border: none;
+    max-height: fit-content;
+    font-size: 20px;
+    /* padding: 0 0 5px 0; */
+    padding: 5px;
+    color: #c3c8cd;
+}
+
+.favorites-row .star:focus, .favorites-row .star:hover {
+    background: var(--bg-hover-color);
+    transition: 0.4s;
+    color: var(--hover-color);
+    cursor: pointer;
+}
+
+.favorites-row .translated {
+    text-align: right;
+    color: grey;
+}
