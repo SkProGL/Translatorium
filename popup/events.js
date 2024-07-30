@@ -137,11 +137,17 @@ xhrMicrosoftDictionary.addEventListener("readystatechange", function () {
         }
         let response = exist.translations || [],
             arr = {};
+
         for (i in response) {
             let partOfSpeech = response[i].posTag.toLowerCase(),
-                synonyms = response[i].normalizedTarget;
-            if (arr[partOfSpeech]) { arr[partOfSpeech].push(synonyms); }
-            else { arr[partOfSpeech] = ([synonyms]); }
+                synonyms = response[i].normalizedTarget,
+                backTranslations=response[i].backTranslations;
+            if (arr[partOfSpeech]) {
+                arr[partOfSpeech].push({ "text": synonyms, "backTranslations": backTranslations });
+            }
+            else {
+                arr[partOfSpeech] = ([{ "text": synonyms, "backTranslations": backTranslations }]);
+            }
         }
         removeSynonyms();
         // console.log(arr);

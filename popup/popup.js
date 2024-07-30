@@ -140,17 +140,19 @@ function currentSourceLanguage(detectionAllowed = false) {
     else { return sourceSelect.value; }
 }
 function showSynonyms(t, d = '') {
+
     let row = document.createElement('div'),
         title = document.createElement('div'),
         text = document.createElement('span'),
         description = document.createElement('div');
-    quickSet(row, 'dictionary-row');
-    quickSet(title, 'title', '', t);
-    quickSet(description, 'description');
-    quickSet(text, 'text-content');
+    setElementProperty(row, 'dictionary-row');
+    setElementProperty(title, 'title', '', t);
+    setElementProperty(description, 'description');
+    setElementProperty(text, 'text-content');
     text.tabIndex = '0'; // make keyboard focusable
     d && d.map((n, i) => {
-        text.innerText = ' ' + n + ((i === d.length - 1) ? '' : ',');
+        text.innerText = ' ' + n.text + ((i === d.length - 1) ? '' : ',');
+        text.setAttribute('hover-title', n.backTranslations.map(a => a.normalizedText).join(', '));
         description.appendChild(text.cloneNode(true));
     });
     description.onclick = () => { textOptionClick(event.target.innerText); }
@@ -158,6 +160,8 @@ function showSynonyms(t, d = '') {
     row.appendChild(title);
     row.appendChild(description);
     dictionaryArea.appendChild(row);
+    // refresh title list
+    titleOnHover();
 }
 function removeSynonyms() {
     dictionaryArea.style.display = 'none';
@@ -210,7 +214,7 @@ function clickNotify(t) {
     wordCount.innerText = t;
     setTimeout(() => { countWords() }, 2000);
 }
-function quickSet(element, classList, attribute = '', text = '') {
+function setElementProperty(element, classList, attribute = '', text = '') {
     classList && (element.classList.add(classList));
     attribute && (element.setAttribute(attribute[0], attribute[1]));
     text && (element.innerText = text);
@@ -237,10 +241,10 @@ function addFavorite(s, t, from, to, save = true) {
         original = document.createElement('div'),
         star = document.createElement('button'),
         translated = document.createElement('div');
-    quickSet(row, 'favorites-row');
-    quickSet(original, 'original', ['hover-title', (languageListMicrosoft[from] || 'Auto') + ' to ' + languageListMicrosoft[to]], s);
-    quickSet(star, 'star', ['hover-title', 'Unstar'], '✦');
-    quickSet(translated, 'translated', ['hover-title', 'Copy'], t);
+    setElementProperty(row, 'favorites-row');
+    setElementProperty(original, 'original', ['hover-title', (languageListMicrosoft[from] || 'Auto') + ' to ' + languageListMicrosoft[to]], s);
+    setElementProperty(star, 'star', ['hover-title', 'Unstar'], '✦');
+    setElementProperty(translated, 'translated', ['hover-title', 'Copy'], t);
 
     row.setAttribute('from-lang', from);
     row.setAttribute('to-lang', to);
