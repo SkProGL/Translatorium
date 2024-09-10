@@ -1,7 +1,7 @@
 # Translatorium
 Browser extension for text translation
 
-More in-depth video: https://www.youtube.com/watch?v=NQ8R5zY_6Jo
+More in-depth video: https://www.youtube.com/watch?v=YAmO--fUoN8&ab_channel=gl
 
 <div align="left">
       <a href="https://www.youtube.com/watch?v=YAmO--fUoN8&ab_channel=gl">
