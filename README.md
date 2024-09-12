@@ -1,6 +1,8 @@
 # Translatorium
 Browser extension for text translation
 
+Chrome web store: https://chromewebstore.google.com/detail/translatorium-modern-lang/pkjoahpfbdojcbfnogpbpmodlenedcek
+
 More in-depth video: https://www.youtube.com/watch?v=YAmO--fUoN8&ab_channel=gl
 
 <div align="left">
